@@ -12,13 +12,14 @@ pipeline {
         }
 
         stage('Test') {
-            steps {
-                script {
-                    echo 'Running tests...'
-                    sh './PES1UG22AM177-1'  
-                }
+        steps {
+            script {
+                echo 'Running tests...'
+                sh './non_existent_binary'  // Intentional error: this file does not exist
             }
         }
+    }
+
 
         stage('Deploy') {
             steps {
